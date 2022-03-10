@@ -9,7 +9,6 @@ const server = app.listen(port, () => {
 });
 
 
-
 app.use(function(req,res) {
     res.status( 404).send("Endpoint does not exist.")
     res.type("text/plain")
