@@ -8,7 +8,9 @@ const server = app.listen(port, () => {
     console.log('App listening on port %PORT'.replace('%PORT',port))
 });
 
+
+
 app.use(function(req,res) {
-    res.status(404).send("Endpoint does not exist.")
+    res.status( 404).send("Endpoint does not exist.")
     res.type("text/plain")
 })
