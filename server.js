@@ -12,6 +12,7 @@ app.get('/app', (req,res) => {
     res.status(200).end("The API is working!")
     res.type("text/plain")
 })
+//Lets see if this works
 
 app.use(function(req,res) {
     res.status(404).send("Endpoint does not exist.")
