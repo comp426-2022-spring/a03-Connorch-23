@@ -1,5 +1,4 @@
 const express = require('express');
-const { set } = require('express/lib/application');
 const app = express()
 const port = 5000
 /** Coin flip functions 
