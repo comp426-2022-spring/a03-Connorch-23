@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express()
-const port = 5000
+const port = 3000
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
