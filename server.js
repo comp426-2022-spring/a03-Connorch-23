@@ -72,7 +72,7 @@ const port = 5000
    */
   
   function countFlips(array) {
-    let flips = {heads: 0, tails: 0};
+    let flips = {tails: 0, heads: 0};
     for (let i=0; i < array.length;i++) {
       if (array[i].localeCompare("heads")==0) {
         flips.heads++;
@@ -121,19 +121,24 @@ const port = 5000
 
 
 
-/**const server = app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log('App listening on port %PORT'.replace('%PORT',port))
 });
-**/
+
 
 app.get('/app/', (req,res) => {
-    res.statusMessage = 'OK';
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
+    res.statusMessage = 'OK';
     res.end(res.statusCode+ ' ' +res.statusMessage)
 })
 
+app.get('/app/flip/call/:call', (req,res) => {
+  const call = req.params.call;
+  res.status(200).json(flipACoin(call))
+})  
+
 app.get('/app/flip/', (req,res) => {
-    res.status(200).json(coinFlip())
+    res.status(200).json({'flip' : coinFlip()})
 })
 
 app.get('/app/flips/:number', (req,res) => {
@@ -146,8 +151,8 @@ app.get('/app/echo/:number', (req,res) => {
 })
 
 app.use(function(req,res) {
-    res.status( 404).send("Endpoint does not exist.")
-    res.type("text/plain")
+  res.type("text/plain")
+    res.status( 404).send("404 Not found")
 })
 
   
