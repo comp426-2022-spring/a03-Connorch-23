@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express()
-//const args = require("minimist")(process.argv.slice(2))
-//args["port"]
-const port = port || process.env.PORT || 3000
+const args = require("minimist")(process.argv.slice(2))
+args["port"]
+const port = args.port || process.env.PORT || 3000
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
