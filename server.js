@@ -121,9 +121,10 @@ const port = 5000
 
 
 
-const server = app.listen(port, () => {
+/**const server = app.listen(port, () => {
     console.log('App listening on port %PORT'.replace('%PORT',port))
 });
+**/
 
 app.get('/app/', (req,res) => {
     res.statusMessage = 'OK';
