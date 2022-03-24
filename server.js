@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express()
-const port = 5000
+const port = 5555
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
@@ -125,7 +125,7 @@ const server = app.listen(port, () => {
     console.log('App listening on port %PORT'.replace('%PORT',port))
 });
 
-app.get('/app', (req,res) => {
+app.get('/app/', (req,res) => {
     res.statusMessage = 'OK';
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
     res.end(res.statusCode+ ' ' +res.statusMessage)
